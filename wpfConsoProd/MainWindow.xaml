@@ -1,0 +1,47 @@
+﻿<Window x:Class="wpfConsoProd.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpfConsoProd"
+        mc:Ignorable="d"
+        Title="Producteur/Consommateur" Height="450" Width="800">
+    <Grid>
+        <Label Content="Producteur" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="104,33,0,0" VerticalAlignment="Top" Width="160"/>
+        <Label Content="Consommateur" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="529,33,0,0" VerticalAlignment="Top" Width="160"/>
+        <ListView Name="ListeViewProd" HorizontalAlignment="Left" Height="257" Margin="72,82,0,0" VerticalAlignment="Top" Width="239">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nom" Width="115" DisplayMemberBinding="{Binding Nom}"></GridViewColumn>
+                    <GridViewColumn Header="Pause" Width="115" DisplayMemberBinding="{Binding pause}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView Name="ListeViewConso" HorizontalAlignment="Left" Height="257" Margin="486,82,0,0" VerticalAlignment="Top" Width="239">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nom" Width="115" DisplayMemberBinding="{Binding Nom}"></GridViewColumn>
+                    <GridViewColumn Header="Pause" Width="115" DisplayMemberBinding="{Binding pause}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Button Name="addProd" Content="Add" HorizontalAlignment="Left" Margin="72,365,0,0" VerticalAlignment="Top" Width="115" Click="AddProd_Click"/>
+        <Button Name="pauseProd" Content="Pause" HorizontalAlignment="Left" Margin="192,365,0,0" VerticalAlignment="Top" Width="119" Click="PauseProd_Click"/>
+        <Button Name="addconso" Content="Add" HorizontalAlignment="Left" Margin="486,365,0,0" VerticalAlignment="Top" Width="115" Click="Addconso_Click"/>
+        <Button Name="pauseConso" Content="Pause" HorizontalAlignment="Left" Margin="606,365,0,0" VerticalAlignment="Top" Width="119" Click="PauseConso_Click"/>
+        <ProgressBar Name="pipe" HorizontalAlignment="Left" Height="52" Margin="280,185,0,0" VerticalAlignment="Top" Width="250" RenderTransformOrigin="0.5,0.5" Minimum="0" Maximum="20">
+            <ProgressBar.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ProgressBar.RenderTransform>
+        </ProgressBar>
+        <TextBox Name="nomProd" HorizontalAlignment="Left" Height="23" Margin="72,387,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="239"/>
+        <TextBox x:Name="nomConso" HorizontalAlignment="Left" Height="23" Margin="486,387,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="239"/>
+
+    </Grid>
+</Window>
